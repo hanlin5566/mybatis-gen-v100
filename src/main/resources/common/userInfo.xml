@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<properties resource="common_config.properties" />
+    <context id="centerTables" targetRuntime="MyBatis3">
+    	<property name="javaFileEncoding" value="UTF-8"/>
+        <property name="javaFormatter" value="util.MyFormatter"/>
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+        <commentGenerator type="com.hit.mybatis.generator.MyCommentGenerator">
+
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+            connectionURL="${connectionURL}" userId="${userId}" password="${password}">
+<property name="useInformationSchema" value="true"></property></jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="${entityPackage}"
+            targetProject="${targetFloder}src/main/java">
+            <property name="enableSubPackages" value="false" />
+            <property name="trimStrings" value="true" />
+            <property name="rootClass" value="com.hit.base.core.BaseEntity"/>
+        </javaModelGenerator>
+
+        <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="${mapperPackage}"
+            targetProject="${targetFloder}src/main/java">
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+        
+		<table schema="common" tableName="user_info" domainObjectName="UserInfoEntity">
+        	<property name="ignoreQualifiersAtRuntime" value="false"/>
+        	<columnOverride column="user_type" javaType="com.hit.common.enums.UserType" />
+        	<columnOverride column="id_card_type" javaType="com.hit.base.enums.IdCardType" />
+        	<columnOverride column="reg_type" javaType="com.hit.common.enums.RegType" />
+        	<columnOverride column="user_flg" javaType="com.hit.common.enums.UserFlg" />
+        	<columnOverride column="gender" javaType="com.hit.base.enums.GenderType" />
+        	<columnOverride column="status" javaType="com.hit.base.enums.Status" />
+        	
+        </table>
+		<table schema="common" tableName="user_info_auth" domainObjectName="UserInfoAuthEntity">
+        	<property name="ignoreQualifiersAtRuntime" value="false"/>
+        	<columnOverride column="auth_type" javaType="com.hit.common.enums.AuthType" />
+        	<columnOverride column="status" javaType="com.hit.base.enums.Status" />
+        </table>
+	</context>
+    
+</generatorConfiguration>

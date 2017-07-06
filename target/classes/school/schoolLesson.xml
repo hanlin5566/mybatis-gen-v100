@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<properties resource="school_config.properties" />
+    <context id="centerTables" targetRuntime="MyBatis3">
+    	<property name="javaFileEncoding" value="UTF-8"/>
+        <property name="javaFormatter" value="util.MyFormatter"/>
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+        <commentGenerator type="com.hit.mybatis.generator.MyCommentGenerator">
+
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+            connectionURL="${connectionURL}" userId="${userId}" password="${password}">
+<property name="useInformationSchema" value="true"></property></jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="gen.hit.school.entity"
+            targetProject="${targetFloder}src/main/java">
+            <property name="enableSubPackages" value="false" />
+            <property name="trimStrings" value="true" />
+           	<property name="rootClass" value="com.hit.base.core.BaseEntity"/>
+        </javaModelGenerator>
+
+        <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="gen.hit.school.mapper"
+            targetProject="${targetFloder}src/main/java">
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+        
+		<table schema="school" tableName="school_lesson" domainObjectName="SchoolLessonEntity">
+        	<property name="ignoreQualifiersAtRuntime" value="false"/>
+        	
+        	<columnOverride column="time_type" javaType="com.hit.school.enums.LessonTimeType"></columnOverride>
+        	<columnOverride column="lesson_number" javaType="com.hit.school.enums.LessonNumber"></columnOverride>
+        	<columnOverride column="status" javaType="com.hit.base.enums.Status" />
+        </table>
+	</context>
+    
+</generatorConfiguration>

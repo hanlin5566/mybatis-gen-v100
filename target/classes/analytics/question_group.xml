@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<properties resource="analytics_config.properties" />
+	<context id="centerTables" targetRuntime="MyBatis3">
+		<property name="javaFileEncoding" value="UTF-8" />
+		<property name="javaFormatter" value="util.MyFormatter" />
+		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+		<commentGenerator type="com.hit.mybatis.generator.MyCommentGenerator">
+
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="${connectionURL}" userId="${userId}" password="${password}">
+			<property name="useInformationSchema" value="true"></property>
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="${entityPackage}"
+			targetProject="${targetFloder}src/main/java">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+			<property name="rootClass" value="com.hit.base.core.BaseEntity" />
+		</javaModelGenerator>
+
+		<javaClientGenerator type="ANNOTATEDMAPPER"
+			targetPackage="${mapperPackage}" targetProject="${targetFloder}src/main/java">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+
+		<table schema="analytics" tableName="question_group" domainObjectName="QuestionGroupEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+
+			<columnOverride column="calculate_type" javaType="com.hit.quesnaire.enums.CalculateType" />
+			<columnOverride column="process_status" javaType="com.hit.quesnaire.enums.ProcessStatus" />
+			<columnOverride column="status" javaType="com.hit.base.enums.Status" />
+		</table>
+
+
+		<table schema="analytics" tableName="question_group_detail" domainObjectName="QuestionGroupDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+
+			<columnOverride column="status" javaType="com.hit.base.enums.Status" />
+		</table>
+	</context>
+
+</generatorConfiguration>

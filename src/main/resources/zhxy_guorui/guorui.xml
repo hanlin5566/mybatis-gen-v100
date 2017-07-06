@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<properties resource="zhxy_guorui_config.properties" />
+	<context id="guoruiTables" targetRuntime="MyBatis3">
+		<property name="javaFileEncoding" value="UTF-8" />
+		<property name="javaFormatter" value="util.MyFormatter" />
+		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+		<commentGenerator type="com.hit.mybatis.generator.MyCommentGenerator">
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="${connectionURL}" userId="${userId}" password="${password}">
+			<property name="useInformationSchema" value="true"></property>
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="${entityPackage}"
+			targetProject="${targetFloder}src/main/java">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<javaClientGenerator type="ANNOTATEDMAPPER"
+			targetPackage="${mapperPackage}" targetProject="${targetFloder}src/main/java">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+
+		<table schema="zhxy_guorui" tableName="sys_user"
+			domainObjectName="SysUserEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_user_parent"
+			domainObjectName="SysUserParentEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_user_offical"
+			domainObjectName="SysUserOfficalEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_user_staff"
+			domainObjectName="SysUserStaffEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_user_student"
+			domainObjectName="SysUserStudentEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+			<columnOverride column="class" property="class_id" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_user_staff"
+			domainObjectName="SysUserStaffEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+
+		<table schema="zhxy_guorui" tableName="anl_achievement_statistic_student_result"
+			domainObjectName="AnlAchievementStatisticStudentResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_comment"
+			domainObjectName="AnlCommentEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_exam_level_result"
+			domainObjectName="AnlExamLevelResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_exam_quality_range_result"
+			domainObjectName="AnlExamQualityRangeResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_exam_rank"
+			domainObjectName="AnlExamRankEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_final_indicator_range_result"
+			domainObjectName="AnlFinalIndicatorRangeResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_final_indicator_student_result"
+			domainObjectName="AnlFinalIndicatorStudentResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_medical_check_range_item_result"
+			domainObjectName="AnlMedicalCheckRangeItemResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_medical_check_range_rule_result"
+			domainObjectName="AnlMedicalCheckRangeRuleResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_medical_check_student_item_result"
+			domainObjectName="AnlMedicalCheckStudentItemResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_message"
+			domainObjectName="AnlMessageEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_physical_exam_range_indicator_result"
+			domainObjectName="AnlPhysicalExamRangeIndicatorResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_physical_exam_range_item_result"
+			domainObjectName="AnlPhysicalExamRangeItemResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_physical_exam_range_rule_result"
+			domainObjectName="AnlPhysicalExamRangeRuleResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_physical_exam_student_indicator_result"
+			domainObjectName="AnlPhysicalExamStudentIndicatorResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_physical_exam_student_item_result"
+			domainObjectName="AnlPhysicalExamStudentItemResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_questionnaire_indicator_parent_result"
+			domainObjectName="AnlQuestionnaireIndicatorParentResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_questionnaire_indicator_range_result"
+			domainObjectName="AnlQuestionnaireIndicatorRangeResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_questionnaire_indicator_student_result"
+			domainObjectName="AnlQuestionnaireIndicatorStudentResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_questionnaire_indicator_teacher_result"
+			domainObjectName="AnlQuestionnaireIndicatorTeacherResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_questionnaire_result"
+			domainObjectName="AnlQuestionnaireResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_range"
+			domainObjectName="AnlRangeEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_screen_final_indicator_result"
+			domainObjectName="AnlScreenFinalIndicatorResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_two_way_checklist_exam_result"
+			domainObjectName="AnlTwoWayChecklistExamResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="anl_two_way_checklist_exam_student_result"
+			domainObjectName="AnlTwoWayChecklistExamStudentResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_anl_origin_exam_result"
+			domainObjectName="DataAnlOriginExamResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_anl_origin_exam_result_detail"
+			domainObjectName="DataAnlOriginExamResultDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_anl_standardized_score_exam_result"
+			domainObjectName="DataAnlStandardizedScoreExamResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_anl_standardized_score_exam_result_detail"
+			domainObjectName="DataAnlStandardizedScoreExamResultDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_medical_check_result"
+			domainObjectName="DataMedicalCheckResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_medical_check_result_detail"
+			domainObjectName="DataMedicalCheckResultDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_physical_exam_result"
+			domainObjectName="DataPhysicalExamResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_physical_exam_result_detail"
+			domainObjectName="DataPhysicalExamResultDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_prc_origin_exam_result"
+			domainObjectName="DataPrcOriginExamResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_prc_origin_exam_result_detail"
+			domainObjectName="DataPrcOriginExamResultDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_prc_standardized_score_exam_result"
+			domainObjectName="DataPrcStandardizedScoreExamResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_prc_standardized_score_exam_result_detail"
+			domainObjectName="DataPrcStandardizedScoreExamResultDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_questionnaire_parent_result"
+			domainObjectName="DataQuestionnaireParentResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_questionnaire_student_result"
+			domainObjectName="DataQuestionnaireStudentResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_questionnaire_teacher_result"
+			domainObjectName="DataQuestionnaireTeacherResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_two_way_checklist"
+			domainObjectName="DataTwoWayChecklistEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="data_two_way_checklist_detail"
+			domainObjectName="DataTwoWayChecklistDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="hw_bask_favour"
+			domainObjectName="HwBaskFavourEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="hw_bask_homework"
+			domainObjectName="HwBaskHomeworkEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="hw_bask_reply"
+			domainObjectName="HwBaskReplyEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="hw_homework"
+			domainObjectName="HwHomeworkEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="hw_homework_detail"
+			domainObjectName="HwHomeworkDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="hw_student_result"
+			domainObjectName="HwStudentResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="hw_student_result_detail"
+			domainObjectName="HwStudentResultDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="hw_unfinish_student"
+			domainObjectName="HwUnfinishStudentEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="pjfx_analyze_final_result"
+			domainObjectName="PjfxAnalyzeFinalResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="pjfx_analyze_option_final_result"
+			domainObjectName="PjfxAnalyzeOptionFinalResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="pjfx_jdfk"
+			domainObjectName="PjfxJdfkEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="pjfx_questionnaire_result"
+			domainObjectName="PjfxQuestionnaireResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="prc_achievement_statistic_student_result"
+			domainObjectName="PrcAchievementStatisticStudentResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="prc_exam_level_result"
+			domainObjectName="PrcExamLevelResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="prc_exam_quality_range_result"
+			domainObjectName="PrcExamQualityRangeResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="prc_exam_rank"
+			domainObjectName="PrcExamRankEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="prc_indicator"
+			domainObjectName="PrcIndicatorEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="prc_lesson_result"
+			domainObjectName="PrcLessonResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="prc_lesson_result_indicator"
+			domainObjectName="PrcLessonResultIndicatorEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="prc_lesson_result_student"
+			domainObjectName="PrcLessonResultStudentEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="prc_lesson_statistic_result"
+			domainObjectName="PrcLessonStatisticResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="prc_student_lesson_statistic_result"
+			domainObjectName="PrcStudentLessonStatisticResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="prc_two_way_checklist_exam_result"
+			domainObjectName="PrcTwoWayChecklistExamResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="prc_two_way_checklist_exam_student_result"
+			domainObjectName="PrcTwoWayChecklistExamStudentResultEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_achievement_statistic_item"
+			domainObjectName="SysAchievementStatisticItemEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_achievement_statistic_item_subject"
+			domainObjectName="SysAchievementStatisticItemSubjectEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_achievement_statistic_level"
+			domainObjectName="SysAchievementStatisticLevelEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_achievement_statistic_level_detail"
+			domainObjectName="SysAchievementStatisticLevelDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_achievement_statistic_level_relation"
+			domainObjectName="SysAchievementStatisticLevelRelationEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_analyze_info"
+			domainObjectName="SysAnalyzeInfoEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_analyze_menu"
+			domainObjectName="SysAnalyzeMenuEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_analyze_menu_item"
+			domainObjectName="SysAnalyzeMenuItemEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_analyze_subject"
+			domainObjectName="SysAnalyzeSubjectEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_attachment"
+			domainObjectName="SysAttachmentEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_class_info"
+			domainObjectName="SysClassInfoEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_indicator"
+			domainObjectName="SysIndicatorEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_indicator_datasource_weight"
+			domainObjectName="SysIndicatorDatasourceWeightEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_indicator_physical_item"
+			domainObjectName="SysIndicatorPhysicalItemEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_indicator_process_indicator_weight"
+			domainObjectName="SysIndicatorProcessIndicatorWeightEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_indicator_question"
+			domainObjectName="SysIndicatorQuestionEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_indicator_questionnaire_weight"
+			domainObjectName="SysIndicatorQuestionnaireWeightEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_physical_item"
+			domainObjectName="SysPhysicalItemEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_physical_item_sex"
+			domainObjectName="SysPhysicalItemSexEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_physical_statistic_rule"
+			domainObjectName="SysPhysicalStatisticRuleEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_physical_statistic_rule_detail"
+			domainObjectName="SysPhysicalStatisticRuleDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_questionnaire"
+			domainObjectName="SysQuestionnaireEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_questionnaire_option"
+			domainObjectName="SysQuestionnaireOptionEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_questionnaire_question"
+			domainObjectName="SysQuestionnaireQuestionEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_role_permission"
+			domainObjectName="SysRolePermissionEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_school_info"
+			domainObjectName="SysSchoolInfoEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_screening_condition"
+			domainObjectName="SysScreeningConditionEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_screening_condition_detail"
+			domainObjectName="SysScreeningConditionDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_student_physical_data"
+			domainObjectName="SysStudentPhysicalDataEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_subject_weight"
+			domainObjectName="SysSubjectWeightEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_teacher_subject"
+			domainObjectName="SysTeacherSubjectEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="sys_user_student_history"
+			domainObjectName="SysUserStudentHistoryEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_area" domainObjectName="TAreaEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_averagescore"
+			domainObjectName="TCjfxAveragescoreEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_fourquantile"
+			domainObjectName="TCjfxFourquantileEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_fsd"
+			domainObjectName="TCjfxFsdEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_fsfb"
+			domainObjectName="TCjfxFsfbEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_lcfx"
+			domainObjectName="TCjfxLcfxEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_mcfb"
+			domainObjectName="TCjfxMcfbEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_mcfx"
+			domainObjectName="TCjfxMcfxEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_mcfx_subject"
+			domainObjectName="TCjfxMcfxSubjectEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_mcpc"
+			domainObjectName="TCjfxMcpcEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_mcqs"
+			domainObjectName="TCjfxMcqsEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_menu"
+			domainObjectName="TCjfxMenuEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_menu_bak"
+			domainObjectName="TCjfxMenuBakEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_mingci"
+			domainObjectName="TCjfxMingciEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_nlfx"
+			domainObjectName="TCjfxNlfxEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_nlxxfx"
+			domainObjectName="TCjfxNlxxfxEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_pjf"
+			domainObjectName="TCjfxPjfEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_slfx"
+			domainObjectName="TCjfxSlfxEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_student_sort"
+			domainObjectName="TCjfxStudentSortEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_subjectscore"
+			domainObjectName="TCjfxSubjectscoreEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_txfx"
+			domainObjectName="TCjfxTxfxEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_xf1"
+			domainObjectName="TCjfxXf1Entity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_xf1_lv"
+			domainObjectName="TCjfxXf1LvEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_xtdf"
+			domainObjectName="TCjfxXtdfEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_xtdffsdfx"
+			domainObjectName="TCjfxXtdffsdfxEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_xtdffsdfx_xx"
+			domainObjectName="TCjfxXtdffsdfxXxEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_xtdfpjf"
+			domainObjectName="TCjfxXtdfpjfEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_zgf"
+			domainObjectName="TCjfxZgfEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_zsdfx"
+			domainObjectName="TCjfxZsdfxEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_cjfx_zskfx"
+			domainObjectName="TCjfxZskfxEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_course"
+			domainObjectName="TCourseEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_dictionary"
+			domainObjectName="TDictionaryEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_drawgear"
+			domainObjectName="TDrawgearEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_exam" domainObjectName="TExamEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_exam_class"
+			domainObjectName="TExamClassEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_exam_detail"
+			domainObjectName="TExamDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_exam_paper"
+			domainObjectName="TExamPaperEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_exam_paper_detail"
+			domainObjectName="TExamPaperDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_exam_paper_img"
+			domainObjectName="TExamPaperImgEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_exam_school"
+			domainObjectName="TExamSchoolEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_feedback"
+			domainObjectName="TFeedbackEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_login_record"
+			domainObjectName="TLoginRecordEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_material"
+			domainObjectName="TMaterialEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_new_schedule"
+			domainObjectName="TNewScheduleEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_new_scheduledetail"
+			domainObjectName="TNewScheduledetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_parameter"
+			domainObjectName="TParameterEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_parent_student"
+			domainObjectName="TParentStudentEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_questionaire_receive"
+			domainObjectName="TQuestionaireReceiveEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_receiver_message"
+			domainObjectName="TReceiverMessageEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_report"
+			domainObjectName="TReportEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_role" domainObjectName="TRoleEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_schedule"
+			domainObjectName="TScheduleEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_schedule_detail"
+			domainObjectName="TScheduleDetailEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_schoolcard"
+			domainObjectName="TSchoolcardEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_schoolnotice"
+			domainObjectName="TSchoolnoticeEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_subjectscore"
+			domainObjectName="TSubjectscoreEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_subjectscore_file"
+			domainObjectName="TSubjectscoreFileEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_syslog"
+			domainObjectName="TSyslogEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_sysmodule"
+			domainObjectName="TSysmoduleEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_takeoff"
+			domainObjectName="TTakeoffEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+			<columnOverride column="class" property="class_id" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_taskulous"
+			domainObjectName="TTaskulousEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_unit" domainObjectName="TUnitEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_user_role"
+			domainObjectName="TUserRoleEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="t_version_update"
+			domainObjectName="TVersionUpdateEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+		<table schema="zhxy_guorui" tableName="weixin_bind"
+			domainObjectName="WeixinBindEntity">
+			<property name="ignoreQualifiersAtRuntime" value="false" />
+		</table>
+
+	</context>
+
+</generatorConfiguration>
